@@ -1,0 +1,8 @@
+<!--
+vim: syntax=xml
+-->
+<launch>
+  <arg name="manifest" default="$(find needybot_speech)/param/speech_manifest.yml" />
+  <rosparam file="$(arg manifest)" command="load" ns="needybot/speech/dialog" />
+  <node pkg="needybot_speech" type="server.py" name="speech_server" output="screen" />
+</launch>

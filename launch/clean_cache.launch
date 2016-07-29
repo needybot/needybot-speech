@@ -1,0 +1,6 @@
+<!--
+vim: syntax=xml
+-->
+<launch>
+  <node pkg="needybot_dialog" type="clean.py" name="clean_dialog" output="screen" />
+</launch>

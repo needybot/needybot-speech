@@ -1,0 +1,5 @@
+needybot:
+  voice:
+    name: 'Justin'
+    speech_rate: 'medium'
+    codec: 'ogg'

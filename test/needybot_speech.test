@@ -1,0 +1,38 @@
+<!--
+vim: syntax=xml
+-->
+<launch>
+  <!--
+      Needybot Unit Test Run File
+      ===========================
+      This is essentially a launch file that is made to run with rostest.
+      Add in your node- and code-level unit test calls in here, following
+      the patterns below.
+
+      More information can be found at http://wiki.ros.org/rostest.
+
+      Node-Level Tests
+      =====================================================================
+      If you are running a node-level unit test, you would include the node
+      in this launch file, above the call for the unit tests.
+
+      This then fires up the node, and runs the tests.
+
+      **Example:**
+      <node pkg="needybot" type="some_node_we_have.py" name="some_node_we_have" />
+      <test test-name="test_some_node" pkg="needybot_test" type="test_some_node.py" />
+
+      Code-Level Tests
+      =====================================================================
+      If you are running a code-level unit test, you can just add the file
+      in as a test declaration, which will simply run the test file.
+
+      **Example:**
+      <test test-name="test_some_node" pkg="needybot_test" type="test_some_node.py" />
+  -->
+
+  <rosparam file="$(find needybot_speech)/param/needybot_voice.yml" command="load" />
+  <rosparam file="$(find needybot_speech)/param/speech_manifest.yml" command="load" ns="needybot/speech/dialog" />
+
+  <test test-name="test_needybot_speech" pkg="needybot_speech" type="test_needybot_speech.py"/>
+</launch>

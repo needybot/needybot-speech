@@ -1,0 +1,8 @@
+<!--
+vim: syntax=xml
+-->
+<launch>
+  <arg name="manifest" default="$(find needybot_os_dialog)/param/dialog_manifest.yml" />
+  <rosparam file="$(arg manifest)" command="load" ns="needybot/speech/dialog" />
+  <node pkg="needybot_dialog" type="warm.py" name="warm_dialog" output="screen" />
+</launch>

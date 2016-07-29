@@ -1,0 +1,4 @@
+hello_world:
+  template: "Hello, world! My name is ${name}."
+  params:
+    name: "Needybot"
